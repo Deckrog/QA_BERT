@@ -17,7 +17,7 @@ fun sendPost(
 ): JSONObject? {
     class AsyncRequest :
         AsyncTask<String?, Int?, String>() {
-        private fun sendPost(str: String): String {
+        private fun send(str: String): String {
             val url = URL("https://25.109.57.183:8000/$urlTail")
             val urlConnection = url.openConnection() as HttpsURLConnection
 //            Log.e("sending:", str)
@@ -49,7 +49,7 @@ fun sendPost(
         }
 
         override fun doInBackground(vararg arg: String?): String {
-            return sendPost(JSONObject(pairs.toMap()).toString())
+            return send(JSONObject(pairs.toMap()).toString())
         }
     }
 
@@ -88,8 +88,7 @@ class SelfSignedTruster : TrustManager, X509TrustManager {
                 HttpsURLConnection.setDefaultHostnameVerifier { hostname, session -> true }
             } catch (e: Exception) {
                 Log.e(
-                    "Truster", "Unable to initialize the Trust Manager to trust all the "
-                            + "SSL certificates and HTTPS hosts.", e
+                    "Truster", "ERROR", e
                 )
             }
         }
