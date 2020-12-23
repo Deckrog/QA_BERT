@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_text"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <EditText
+        android:id="@+id/passwordRegisterField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/usernameRegisterField"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/usernameRegisterField"
+        app:layout_constraintTop_toBottomOf="@+id/emailRegisterField" />
+
+    <EditText
+        android:id="@+id/usernameRegisterField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerText" />
+
+    <Button
+        android:id="@+id/createUserButton"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/register_button"
+        app:layout_constraintEnd_toEndOf="@+id/passwordRegisterField"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/passwordRegisterField"
+        app:layout_constraintTop_toBottomOf="@+id/registerErrorText" />
+
+    <TextView
+        android:id="@+id/passwordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password_text"
+        app:layout_constraintBottom_toTopOf="@+id/passwordRegisterField"
+        app:layout_constraintStart_toStartOf="@+id/passwordRegisterField" />
+
+    <TextView
+        android:id="@+id/usernameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username_text"
+        app:layout_constraintBottom_toTopOf="@+id/usernameRegisterField"
+        app:layout_constraintStart_toStartOf="@+id/usernameRegisterField" />
+
+    <EditText
+        android:id="@+id/emailRegisterField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/usernameRegisterField"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/usernameRegisterField"
+        app:layout_constraintTop_toBottomOf="@+id/usernameRegisterField" />
+
+    <TextView
+        android:id="@+id/emailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_text"
+        app:layout_constraintBottom_toTopOf="@+id/emailRegisterField"
+        app:layout_constraintStart_toStartOf="@+id/emailRegisterField" />
+
+    <TextView
+        android:id="@+id/registerErrorText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="@+id/passwordRegisterField"
+        app:layout_constraintStart_toStartOf="@+id/passwordRegisterField"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterField" />
+</androidx.constraintlayout.widget.ConstraintLayout>
