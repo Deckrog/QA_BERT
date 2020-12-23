@@ -49,17 +49,13 @@ fun sendPost(
         }
 
         override fun doInBackground(vararg arg: String?): String {
-            return sendPost(jsonObject(*pairs).toString())
+            return sendPost(JSONObject(pairs.toMap()).toString())
         }
     }
 
     val answer = AsyncRequest().execute().get()
     return if (answer.startsWith('{') && answer.endsWith('}') && answer.length > 2)
         JSONObject(answer) else null
-}
-
-private fun jsonObject(vararg pairs: Pair<String, Any>): JSONObject {
-    return JSONObject(pairs.toMap())
 }
 
 fun logout(token: String) {
