@@ -84,7 +84,7 @@ class SelfSignedTruster : TrustManager, X509TrustManager {
 
     companion object {
         fun trust() {
-            val trustAllCerts = arrayOf<TrustManager>(AllCertificatesAndHostsTruster())
+            val trustAllCerts = arrayOf<TrustManager>(SelfSignedTruster())
             try {
                 val context = SSLContext.getInstance("SSL")
                 context.init(null, trustAllCerts, SecureRandom())
